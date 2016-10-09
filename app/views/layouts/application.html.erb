@@ -8,10 +8,11 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<%= render 'partials/header' %>
 
-<%= yield %>
+<div class="container">
+	<%= yield %>	
+</div>
 
 </body>
 </html>
