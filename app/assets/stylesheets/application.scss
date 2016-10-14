@@ -16,12 +16,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'https://fonts.googleapis.com/css?family=Roboto';
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
 
 $red: #EE543A;
 
 body{
 	font-family: 'Roboto', sans-serif;
-	background-color: #f7f7f7;
+	background-color: #F5F5F1;
 	color: #54573A;
 }
 
@@ -32,8 +33,20 @@ body{
 .navbar{
 	border: none;
 	background-color: $red;
+	height: 90px;
+	font-size: 16px;
 	a{
 		color: #fff!important;
+		line-height: 90px!important;
+        padding-top: 0px!important;
+        &:hover{
+        	opacity: 0.6;
+        }
+	}
+	
+	.navbar-brand{
+		font-family: 'Lalezar', cursive;
+		font-size: 28px;
 	}
 }
 
@@ -44,4 +57,5 @@ body{
 .box{
 	background-color: #FFF;
 	padding: 20px;
+	border: 1px solid #E1E3DF;
 }
