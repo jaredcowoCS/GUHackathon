@@ -30,14 +30,18 @@ body{
 	width: 75%;
 }
 
+.center-block{
+	float: none;
+}
+
 .navbar{
 	border: none;
 	background-color: $red;
 	height: 90px;
 	font-size: 16px;
+	margin-bottom: 0;
 	a{
 		color: #fff!important;
-		line-height: 90px!important;
         padding-top: 0px!important;
         &:hover{
         	opacity: 0.6;
@@ -47,15 +51,60 @@ body{
 	.navbar-brand{
 		font-family: 'Lalezar', cursive;
 		font-size: 28px;
+		line-height: 90px;
 	}
 }
 
-.shadow{
-	border-bottom: 1px solid #f4f4f4;
+.navbar .nav > li > a {
+  line-height: 90px;
+  padding-bottom:0px!important;
 }
 
 .box{
 	background-color: #FFF;
 	padding: 20px;
 	border: 1px solid #E1E3DF;
+}
+
+.banner{
+	position: relative;
+	h2{
+		font-size: 36px;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+	.headline{
+		position: absolute;
+		width: 100%;
+		top: 0;
+		padding-top: 200px;
+		color: #FFF;
+		margin: 0 auto;
+        text-align: center;
+	}
+}
+
+.btn{
+	border: none!important;
+	border-radius: 3px;
+}
+
+.btn-primary{
+	background: #F04903;
+	&:hover{
+		background: #F04903;
+		opacity: 0.9;
+	}
+}
+
+.btn-secondary{
+	background: #71BA51;
+	color: #fff;
+	&:hover{
+		background: #71BA51;
+		color: #fff;
+		opacity: 0.9;
+	}
 }
