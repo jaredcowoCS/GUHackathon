@@ -2,8 +2,12 @@
 <div class="banner">
 	<div class="headline">
 		<h2 class="text-center">Register today to create your own shop & starting making money locally</h2>
-		<%= link_to "Sign Up", root_path, class: "btn btn-primary btn-lg" %>
-		<%= link_to "Sign In", root_path, class: "btn btn-secondary btn-lg" %>
+		<% if user_signed_in? %>
+		    <%= link_to "Dashboard", dashboard_path, class: "btn btn-secondary btn-lg" %>
+		<% else %>
+			<%= link_to "Sign Up", root_path, class: "btn btn-primary btn-lg" %>
+		    <%= link_to "Sign In", root_path, class: "btn btn-secondary btn-lg" %>
+		<% end %>
 	</div>
 	<%= image_tag "banner" %>
 </div>

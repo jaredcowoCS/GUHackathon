@@ -1,9 +1,24 @@
+<div class="box">
+	
+
 <% if !current_user.shop.present? %>
     <h3 class="text-center">You don't have a shop</h3>
     <p class="text-center"><%= link_to "Create Shop", new_shop_path, class: "btn btn-secondary" %></p>
 <% end %>
 
 <% if current_user.shop.present? %>
-    <h3 class="text-center"><%= current_user.shop.name %></h3>
-    <h3 class="text-center">No Products</h3>
+    <h3 class="text-center">Shop: <%= current_user.shop.name %></h3>
+    <p class="text-center"><%= link_to "Add a product", new_product_path, class: "btn btn-primary" %></p>
+
+	<div class="row">
+		<% current_user.shop.products.each do |product| %>
+			<div class="col-md-4">
+				<h4><%= product.name %></h4>
+				<h4>$<%= product.price %></h4>
+				<h4>Quantity: <%= product.quantity %></h4>
+			</div>
+		<% end %>
+	</div>
 <% end %>
+
+</div>
