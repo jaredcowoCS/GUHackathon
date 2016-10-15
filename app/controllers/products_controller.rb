@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
   	@products = shop.products.order("created_at DESC")
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def new
   	@product = Product.new
   end

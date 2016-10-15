@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-8 box center-block text-center">
+		<h3><%= @product.name %></h3>
+		<h4>Seller: <%= link_to @product.shop.name, shop_path(@product.shop) %></h4>
+		<%= image_tag(@product.product_image) if @product.product_image? %>
+		<h4>Price: $<%= @product.price %></h4>
+		<p><%= @product.description %></p>
+		<%=link_to "Purchase", root_path, class: "btn btn-secondary" %>
+	</div>
+</div>
+
+<div class="row">
+	<h3 class="text-center">Other products</h3>
+	<% Product.where.not(id: @product.id).each do |product| %>
+		<div class="col-md-3">
+			<div class="product-wrapper">
+				<%= image_tag(product.product_image.normal) if product.product_image? %>
+				<h4 class="text-center"><%= link_to product.name, shop_product_path(product.shop, product) %></h4>
+			</div>
+		</div>
+	<% end %>
+</div>

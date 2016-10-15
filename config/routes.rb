@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   
-  resources :shops
+  resources :shops do
+  	resources :products
+  end
+
   resources :products
 end
