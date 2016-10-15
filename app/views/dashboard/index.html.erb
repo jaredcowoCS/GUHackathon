@@ -14,6 +14,7 @@
 		<% current_user.shop.products.each do |product| %>
 			<div class="col-md-4">
 				<h4><%= product.name %></h4>
+				<%= image_tag(product.product_image) if product.product_image? %>
 				<h4>$<%= product.price %></h4>
 				<h4>Quantity: <%= product.quantity %></h4>
 			</div>

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+  	@products = shop.products.order("created_at DESC")
   end
 
   def new
@@ -7,13 +8,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-  	if Product.create(product_params)
+  	if shop.products.create(product_params)
   		redirect_to dashboard_path
   	end
   end
 
   private	
   	def product_params
-  		params.require(:product).permit(:name, :price, :quantity, :description).merge(shop_id: current_user.shop.id)
+  		params.require(:product).permit(:name, :price, :quantity, :description, :product_image, :shop_id)
   	end
 end
