@@ -1,3 +1,37 @@
 <div class="box">
-	<h3 class="text-center">Hello, here's whats going on in your store</h3>
+	<div class="col-md-5 center-block">
+		<div class="input-group">
+			<input type="text" name="" class="form-control" placeholder="Enteryour giftcard code">
+			<span class="input-group-btn">
+			<button class="btn btn-secondary">Go</button>
+			</span>
+		</div>
+	</div>
+	<h3 class="text-center">Your Balance: <%= humanized_money_with_symbol(Code.first.value_cents) %></h3>
+	<hr>
+
+	<% if !current_user.shop %>
+		<div class="row">
+			<div class="col-md-5 center-block">
+				<h3 class="text-center">Configure your shop</h3>
+				<%= form_for [:dashboard, Shop.new] do |f| %>
+					<div class="form-group">
+						<%= f.label :name %>
+						<%= f.text_field :name, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :address %>
+						<%= f.text_field :address, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :description %>
+						<%= f.text_area :address, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.submit "Create Shop", class: "btn btn-secondary form-control" %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
 </div>

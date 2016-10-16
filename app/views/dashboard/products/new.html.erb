@@ -1,6 +1,6 @@
 <div class="col-md-6 center-block box">
 	<h3 class="text-center">Add a new product</h3>
-	<%= form_for @product, html: {multipart: true} do |f| %>
+	<%= form_for [:dashboard, @product], html: {multipart: true} do |f| %>
 		<div class="form-group">
 			<%= f.label :name %>
 			<%= f.text_field :name, class: "form-control" %>

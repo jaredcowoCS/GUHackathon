@@ -1,6 +1,6 @@
 <div class="col-md-6 box center-block text-center">
 	<h3>Purchase Details</h3><br>
-	<div class="row">
+	<div class="row purchase-details">
 		<div class="col-md-7 pull-left">
 			<%= image_tag(@product.product_image) if @product.product_image? %>
 		</div>
@@ -12,9 +12,8 @@
 	</div>
 	<%= form_for [@product, @purchase] do |f| %>
 		<div class="input-group">
-			<%= f.text_field :code, class: "form-control", placeholder: "Enter giftcard code to complete purchase" %>
 		   <span class="input-group-btn">
-				<%= f.submit "Buy", class: "btn btn-secondary" %>
+				<%= f.submit "Confirm", class: "btn btn-secondary form-control" %>
 			</span>
 		</div>
 	<% end %>

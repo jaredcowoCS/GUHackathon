@@ -15,7 +15,7 @@
 		<div class="col-md-3">
 			<div class="product-wrapper">
 				<%= image_tag(product.product_image.normal) if product.product_image? %>
-				<h4 class="text-center"><%= link_to product.name, product_path(product) %></h4>
+				<h4 class="text-center"><%= link_to product.name, shop_product_path(product.shop, product) %></h4>
 			</div>
 		</div>
 	<% end %>

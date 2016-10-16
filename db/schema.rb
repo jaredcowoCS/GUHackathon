@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016071630) do
+ActiveRecord::Schema.define(version: 20161016205532) do
 
   create_table "codes", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -49,8 +49,10 @@ ActiveRecord::Schema.define(version: 20161016071630) do
   create_table "shops", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "address"
+    t.text     "description"
   end
 
   add_index "shops", ["user_id"], name: "index_shops_on_user_id"

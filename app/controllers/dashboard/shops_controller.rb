@@ -1,4 +1,4 @@
-class ShopsController < ApplicationController
+class Dashboard::ShopsController < ApplicationController
   def index
   end
 
@@ -11,12 +11,12 @@ class ShopsController < ApplicationController
   
   def create
     if Shop.create(shop_params)
-      redirect_to dashboard_path
+      redirect_to root_path
     end
   end
   
   private
     def shop_params
-      params.require(:shop).permit(:name).merge(user_id: current_user.id)
+      params.require(:shop).permit(:name, :address, :description).merge(user_id: current_user.id)
     end
 end

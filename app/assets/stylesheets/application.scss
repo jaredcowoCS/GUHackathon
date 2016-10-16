@@ -100,6 +100,8 @@ body{
 .btn{
 	border: none!important;
 	border-radius: 3px;
+	padding-top: 7px;
+	padding-bottom: 7px;
 }
 
 .btn-primary{
@@ -166,6 +168,16 @@ body{
     text-align: left;
  }
 
+input[type="text"], input[type="number"]{
+	background-color: #f7f7f7;
+	border: none;
+}
+
+textarea{
+	background-color: #f7f7f7!important;
+	border: none!important;
+	resize: none;
+}
 
 footer{
 	background-color: #1C2021;
