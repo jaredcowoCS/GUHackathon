@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  layout :layout, except: [:show]
+  
   def index
   	@products = shop.products.order("created_at DESC")
   end

@@ -69,6 +69,7 @@ body{
 .product-wrapper{
 	background-color: #FFF;
 	border: 1px solid #E1E3DF;
+	margin-bottom: 14px;
 	img{
 		width:100%;
 		height: auto;
@@ -87,11 +88,11 @@ body{
 	.headline{
 		position: absolute;
 		width: 100%;
-		top: 0;
-		padding-top: 200px;
+		top: 50%;
 		color: #FFF;
 		margin: 0 auto;
         text-align: center;
+        transform: translateY(-50%);
 	}
 }
 

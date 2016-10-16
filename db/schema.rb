@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015213810) do
+ActiveRecord::Schema.define(version: 20161016045919) do
+
+  create_table "codes", force: :cascade do |t|
+    t.string   "code"
+    t.decimal  "value",      precision: 8, scale: 2
+    t.decimal  "decimal",    precision: 8, scale: 2
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"

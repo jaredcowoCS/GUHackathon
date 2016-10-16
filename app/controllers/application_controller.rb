@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   	current_user.shop
   end
 
+  def layout
+	  user_signed_in? ? 'dashboard' : 'application'
+  end
+
 end
