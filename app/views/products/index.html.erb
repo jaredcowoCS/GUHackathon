@@ -1,5 +1,6 @@
 <div class="box">
-	<p class="text-center"><%= link_to "New Product", products_new_path, class: "btn btn-secondary" %></p>
+	<%= Code.first.value_cents <= @products.first.price_cents%>
+	<p class="text-center"><%= link_to "New Product", new_product_path, class: "btn btn-secondary" %></p>
 	<table class="table table-striped"><br>
 	    <thead>
 	      <tr>
@@ -16,7 +17,7 @@
 		        <td><%= product.name %></td>
 		        <td><%= image_tag(product.product_image.tiny) if product.product_image.tiny.present? %></td>
 		        <td><%= product.quantity %></td>
-		        <td>john@example.com</td>
+		        <td><%= humanized_money_with_symbol(product.price_cents) %></td>
 		        <td><%= link_to "Edit", root_path, class: "btn btn-secondary btn-xs" %> <%= link_to "Delete", root_path, class: "btn btn-danger btn-xs" %></td>
 		      </tr>
 	    	<% end %>

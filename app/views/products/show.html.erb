@@ -3,7 +3,7 @@
 		<h3><%= @product.name %></h3>
 		<h4>Seller: <%= link_to @product.shop.name, shop_path(@product.shop) %></h4>
 		<%= image_tag(@product.product_image) if @product.product_image? %>
-		<h4>Price: $<%= @product.price %></h4>
+		<h4>Price: <%= humanized_money_with_symbol(@product.price_cents) %></h4>
 		<p><%= @product.description %></p>
 		<%=link_to "Purchase", new_product_purchase_path(@product), class: "btn btn-secondary" %>
 	</div>
@@ -11,7 +11,7 @@
 
 <div class="row">
 	<h3 class="text-center">Other products</h3>
-	<% Product.where.not(id: @product.id).each do |product| %>
+	<% Product.where.not(id: @product.id).limit(8).each do |product| %>
 		<div class="col-md-3">
 			<div class="product-wrapper">
 				<%= image_tag(product.product_image.normal) if product.product_image? %>

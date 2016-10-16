@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'purchases/new'
-
-  get 'products/index'
-
-  get 'products/new'
-
-  get '/dashboard', to: 'dashboard#index'
 
   root 'pages#home'
+
+  get '/dashboard', to: 'dashboard#index'
+  get '/dashboard/shop', to: 'dashboard#shop'
 
   devise_for :users
   

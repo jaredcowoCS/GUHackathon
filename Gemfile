@@ -18,6 +18,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem "mini_magick"
+gem 'money-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
