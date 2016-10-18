@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  get '/dashboard', to: 'dashboard#index'
   get '/dashboard/shop', to: 'dashboard#shop'
 
   devise_for :users
 
   namespace :dashboard do
+    get '/', to: 'dashboard#index'
+
     resources :shops do
       resources :products
     end
     resources :products
+    resources :balances
   end
 
   resources :shops do
@@ -20,5 +22,5 @@ Rails.application.routes.draw do
   resources :products do
     resources :purchases 
   end
-  resources :shops
+  resources :shops, except: [:new, :create, :update]
 end

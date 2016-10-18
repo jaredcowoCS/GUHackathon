@@ -1,13 +1,17 @@
 <div class="box">
-	<div class="col-md-5 center-block">
-		<div class="input-group">
-			<input type="text" name="" class="form-control" placeholder="Enteryour giftcard code">
-			<span class="input-group-btn">
-			<button class="btn btn-secondary">Go</button>
-			</span>
+	<% if current_user.shop && current_user.balance.present? %>
+		<div class="col-md-5 center-block">
+			<%= form_for [:dashboard, current_user.balance], method: :put do |f| %>
+				<div class="input-group">
+					<%= text_field_tag :code, "", class: "form-control", placeholder: "Enter your giftcard code" %>
+					<span class="input-group-btn">
+						<%= f.submit "Go", class: "btn btn-secondary" %>
+					</span>
+				</div>
+			<% end %> 
 		</div>
-	</div>
-	<h3 class="text-center">Your Balance: <%= humanized_money_with_symbol(Code.first.value_cents) %></h3>
+		<h3 class="text-center">Your Balance: <%= humanized_money_with_symbol(current_user.balance.amount_cents) %></h3>
+	<% end %>
 	<hr>
 
 	<% if !current_user.shop %>
@@ -32,6 +36,13 @@
 					</div>
 				<% end %>
 			</div>
+		</div>
+	<% else %>
+		<div class="row">
+			<h3 class="text-center">Recently Sold</h3>
+		</div>
+		<div class="row">
+			<h3 class="text-center">Recently purchased</h3>
 		</div>
 	<% end %>
 </div>

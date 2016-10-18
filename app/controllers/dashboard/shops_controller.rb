@@ -9,8 +9,11 @@ class Dashboard::ShopsController < ApplicationController
     @shop = Shop.new
   end
   
+  # Create a shop instance and also a base balance instance $0.0
   def create
     if Shop.create(shop_params)
+      current_user.create_balance
+      flash[:success] = "Your shop has been created"
       redirect_to root_path
     end
   end
