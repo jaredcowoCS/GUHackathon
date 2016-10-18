@@ -7,18 +7,15 @@ class PurchasesController < ApplicationController
 	end
 
 	def create
-		@code = Code.where(code: params[:purchase][:code]).first 
-		if @code.present?
-			if @code.value_cents >= Product.find(params[:product_id]).price_cents
-				flash[:success] = "Purchase processed"
-				redirect_to dashboard_path
-			else
-				flash[:danger] = "You don't have enough credits to make that purchase"
-				redirect_to new_product_purchase_path(Product.find(params[:product_id]))
-			end
+		@product = Product.find(params[:product_id])
+		if current_user.balance.amount_cents >= @product.price_cents
+			amount = current_user.balance.amount_cents - @product.price_cents
+			current_user.balance.update_attribute(:amount_cents, amount)
+			flash[:success] = "Payment processed, expect contact from seller soon"
+			redirect_to root_path
 		else
-			flash[:danger] = "Code is invalid"
-			redirect_to new_product_purchase_path(Product.find(params[:product_id]))
+			flash[:danger] = "You dont have enough eBalance to make purchase"
+			redirect_to root_path
 		end
 	end
 

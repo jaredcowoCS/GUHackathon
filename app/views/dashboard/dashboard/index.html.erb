@@ -1,48 +1,21 @@
 <div class="box">
-	<% if current_user.shop && current_user.balance.present? %>
-		<div class="col-md-5 center-block">
-			<%= form_for [:dashboard, current_user.balance], method: :put do |f| %>
-				<div class="input-group">
-					<%= text_field_tag :code, "", class: "form-control", placeholder: "Enter your giftcard code" %>
-					<span class="input-group-btn">
-						<%= f.submit "Go", class: "btn btn-secondary" %>
-					</span>
-				</div>
-			<% end %> 
-		</div>
-		<h3 class="text-center">Your Balance: <%= humanized_money_with_symbol(current_user.balance.amount_cents) %></h3>
-	<% end %>
-	<hr>
-
-	<% if !current_user.shop %>
-		<div class="row">
-			<div class="col-md-5 center-block">
-				<h3 class="text-center">Configure your shop</h3>
-				<%= form_for [:dashboard, Shop.new] do |f| %>
-					<div class="form-group">
-						<%= f.label :name %>
-						<%= f.text_field :name, class: "form-control" %>
-					</div>
-					<div class="form-group">
-						<%= f.label :address %>
-						<%= f.text_field :address, class: "form-control" %>
-					</div>
-					<div class="form-group">
-						<%= f.label :description %>
-						<%= f.text_area :address, class: "form-control" %>
-					</div>
-					<div class="form-group">
-						<%= f.submit "Create Shop", class: "btn btn-secondary form-control" %>
-					</div>
-				<% end %>
+	<div class="col-md-5 center-block">
+		<%= form_for [current_user.balance], method: :put do |f| %>
+			<div class="input-group">
+				<%= text_field_tag 'codes[code]', "", class: "form-control", placeholder: "Enter your giftcard code" %>
+				<span class="input-group-btn">
+					<%= f.submit "Go", class: "btn btn-secondary" %>
+				</span>
 			</div>
-		</div>
-	<% else %>
-		<div class="row">
-			<h3 class="text-center">Recently Sold</h3>
-		</div>
-		<div class="row">
-			<h3 class="text-center">Recently purchased</h3>
-		</div>
-	<% end %>
+		<% end %> 
+	</div>
+	<h3 class="text-center">Your Balance: <%= humanized_money_with_symbol(current_user.balance.amount_cents) %></h3>
+	<hr>
+	
+	<div class="row">
+		<h3 class="text-center">Recently Sold</h3>
+	</div>
+	<div class="row">
+		<h3 class="text-center">Recently purchased</h3>
+	</div>
 </div>

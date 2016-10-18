@@ -3,3 +3,4 @@ class Code < ActiveRecord::Base
 
 	monetize :value_cents
 end
+

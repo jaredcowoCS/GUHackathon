@@ -1,6 +1,6 @@
 <div class="box">
 	<p class="text-center"><%= link_to "New Product", new_dashboard_product_path, class: "btn btn-secondary" %></p>
-	<%if shop.products.present? %>
+	<%if current_user.products.present? %>
 		<table class="table table-striped"><br>
 		    <thead>
 		      <tr>

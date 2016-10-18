@@ -15,52 +15,31 @@
 <div class="row latest">
 	<h3 class="text-center row-title">Latest</h3>
 	<% Product.order("created_at DESC").each do |product| %>
-	<div class="col-md-3">
+	<div class="col-md-3 text-center">
 		<div class="product-wrapper">
 			<%= image_tag(product.product_image.normal) if product.product_image? %>
-			<h4 class="text-center"><%= link_to product.name, product_path(product) %></h4>
-			<h4 class="text-center"><%= humanized_money_with_symbol(product.price_cents) %></h4>
-			<h5 class="text-center">Seller: <%= product.shop.name %></h5>
+			<h4><%= link_to product.name, product_path(product) %></h4>
+			<h4><%= humanized_money_with_symbol(product.price_cents) %></h4>
+			<h5><%= product.user.email %></h5>
+			<%= link_to "Buy", new_product_purchase_path(product), class: "btn btn-primary form-control" %>
 		</div>
 	</div>
 	<% end %>
 </div>
-<div class="row">
-	<h3 class="text-center row-title">Shops</h3>
-	<div class="col-md-4">
-		<div class="box">
-			<h3>Shop name</h3>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<div class="box">
-			<h3>Shop name</h3>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<div class="box">
-			<h3>Shop name</h3>
-		</div>
-	</div>
-</div>
+
 <div class="row">
 	<h3 class="text-center row-title">Recently Sold</h3>
-		<div class="col-md-3">
+		<div class="col-md-4">
 		<div class="box">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur odio veniam quas mollitia harum inventore recusandae deserunt error, placeat aliquid fugit voluptatibus blanditiis culpa similique, earum non, asperiores distinctio expedita.</p>
 		</div>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-4">
 		<div class="box">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur odio veniam quas mollitia harum inventore recusandae deserunt error, placeat aliquid fugit voluptatibus blanditiis culpa similique, earum non, asperiores distinctio expedita.</p>
 		</div>
 	</div>
-	<div class="col-md-3">
-		<div class="box">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur odio veniam quas mollitia harum inventore recusandae deserunt error, placeat aliquid fugit voluptatibus blanditiis culpa similique, earum non, asperiores distinctio expedita.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
+	<div class="col-md-4">
 		<div class="box">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur odio veniam quas mollitia harum inventore recusandae deserunt error, placeat aliquid fugit voluptatibus blanditiis culpa similique, earum non, asperiores distinctio expedita.</p>
 		</div>
