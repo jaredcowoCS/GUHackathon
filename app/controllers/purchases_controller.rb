@@ -11,6 +11,7 @@ class PurchasesController < ApplicationController
 		if current_user.balance.amount_cents >= @product.price_cents
 			amount = current_user.balance.amount_cents - @product.price_cents
 			current_user.balance.update_attribute(:amount_cents, amount)
+			@product.purchases.create
 			flash[:success] = "Payment processed, expect contact from seller soon"
 			redirect_to root_path
 		else
