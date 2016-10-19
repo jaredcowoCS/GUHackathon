@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
          
   has_one :balance
 
-  has_many :products
+  has_many :products, dependent: :destroy
+  has_many :purchases, dependent: :destroy
 end

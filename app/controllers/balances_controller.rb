@@ -5,7 +5,7 @@ class BalancesController < ApplicationController
 		@code = Code.where(code: params[:codes][:code]).first 
 
 		if @code.present?
-			if current_user.balance.update_attribute(:amount_cents, @code.value_cents)
+			if current_user.balance.update_attribute(:amount_cents, current_user.balance.amount_cents += @code.value_cents)
 				@code.destroy
 				flash[:success] = "Gift card code accepted"
 				redirect_to dashboard_path

@@ -5,7 +5,7 @@
 		<%= image_tag(@product.product_image) if @product.product_image? %>
 		<h4>Price: <%= humanized_money_with_symbol(@product.price_cents) %></h4>
 		<p><%= @product.description %></p>
-		<%=link_to "Purchase", root_path, class: "btn btn-secondary" %>
+		<%=link_to "Purchase", new_product_purchase_path(@product), class: "btn btn-secondary" %>
 	</div>
 </div>
 
