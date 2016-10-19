@@ -15,7 +15,7 @@
 <div class="row latest">
 	<h3 class="text-center row-title">Latest</h3>
 	<% Product.order("created_at DESC").each do |product| %>
-	<div class="col-md-2 text-center">
+	<div class="col-md-3 text-center">
 		<div class="product-wrapper">
 			<%= image_tag(product.product_image.normal) if product.product_image? %>
 			<h4><%= link_to product.name, product_path(product) %></h4>
