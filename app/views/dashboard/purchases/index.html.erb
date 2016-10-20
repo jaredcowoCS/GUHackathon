@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="box">
+			<h3 class="text-center">Recently Sold</h3><br>
+			<% @sold.each do |sold| %>
+				<div class="row">
+					<div class="col-md-4">
+						<h4><%= sold.product.name %></h4>
+						<h4>Price: <%= humanized_money_with_symbol(sold.product.price_cents) %></h4>
+					</div>
+					<div class="col-md-3">
+						<%= image_tag(sold.product.product_image.tiny) if sold.product.product_image.tiny.present? %>	
+					</div>
+					<div class="col-md-5">
+						<h4>Buyer: </h4>
+						<h5><%= sold.buyer.email %></h5>
+						<h5>Bought: <%= sold.created_at.strftime("%m/%d/%Y") %></h5>
+					</div>
+				</div>
+				<hr>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="box">
+			<h3 class="text-center">Your Recent Purchases</h3><br>
+			<% @purchases.each do |purchase| %>
+				<div class="row">
+					<div class="col-md-4">
+						<h4><%= purchase.product.name %></h4>
+						<h4>Price: <%= humanized_money_with_symbol(purchase.product.price_cents) %></h4>
+					</div>
+					<div class="col-md-3">
+						<%= image_tag(purchase.product.product_image.tiny) if purchase.product.product_image.tiny.present? %>	
+					</div>
+					<div class="col-md-5">
+						<h4>Seller: </h4>
+						<h5><%= purchase.seller.email %></h5>
+						<h5>Bought: <%= purchase.created_at.strftime("%m/%d/%Y") %></h5>
+					</div>
+				</div>
+				<hr>
+			<% end %>
+		</div>
+	</div>
+</div>

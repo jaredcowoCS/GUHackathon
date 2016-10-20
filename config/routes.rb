@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :dashboard do
+  get 'purchases/index'
+  end
+
   root 'pages#home'
 
   devise_for :users,
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
     get '/', to: 'dashboard#index'
 
     resources :products
+    resources :purchases
   end
 
   resources :products, only: [:index, :show] do

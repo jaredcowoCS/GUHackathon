@@ -16,6 +16,7 @@ class PurchasesController < ApplicationController
 			@purchase.buyer = current_user
 			if @purchase.save
 				# This is where the transaction between the bank, seller,and buyer would take place
+				# A success code shall be returned if transaction was successful
 				flash[:success] = "Payment processed, expect contact from seller soon"
 				redirect_to root_path
 			else

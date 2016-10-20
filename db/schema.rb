@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019120531) do
+ActiveRecord::Schema.define(version: 20161020050716) do
 
   create_table "balances", force: :cascade do |t|
     t.integer  "shop_id"
@@ -54,10 +54,14 @@ ActiveRecord::Schema.define(version: 20161019120531) do
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "seller_id"
+    t.integer  "buyer_id"
   end
 
+  add_index "purchases", ["buyer_id"], name: "index_purchases_on_buyer_id"
   add_index "purchases", ["code_id"], name: "index_purchases_on_code_id"
   add_index "purchases", ["product_id"], name: "index_purchases_on_product_id"
+  add_index "purchases", ["seller_id"], name: "index_purchases_on_seller_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
