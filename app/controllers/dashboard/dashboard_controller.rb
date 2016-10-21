@@ -5,7 +5,7 @@ class Dashboard::DashboardController < ApplicationController
   def index
   end
 
-  def shop
+  def account
   end
 
 end

@@ -10,8 +10,8 @@
 </div>
 
 <div class="row">
-	<h3 class="text-center">Other products</h3>
-	<% Product.where.not(id: @product.id).limit(8).each do |product| %>
+	<h3 class="text-center row-title">Other products</h3>
+	<% Product.where.not(id: @product.id).limit(4).each do |product| %>
 		<div class="col-md-3">
 			<div class="product-wrapper">
 				<%= image_tag(product.product_image.normal) if product.product_image? %>
