@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 
   has_many :products, dependent: :destroy
   has_many :purchases, dependent: :destroy
+
+  belongs_to :district
 end

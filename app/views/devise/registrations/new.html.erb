@@ -24,6 +24,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :district, "Select your district: " %>
+        <%= collection_select(:district, :district_id, District.all, :id, :district_name) %>
+      </div>
+
+      <div class="form-group">
         <%= f.submit "Sign up", class: "form-control btn btn-secondary" %>
       </div>
     <% end %>
