@@ -1,0 +1,26 @@
+<div class="row products-index">
+	<div class="col-md-2">
+		<h3>Districts</h3>
+		<ul>
+			<% District.all.each do |district| %>
+				<li><%= link_to district.name, products_path(dst: district.id) %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="col-md-10">
+		<%if params[:dst].present? %>
+			<h3 class="text-center">Products in <%= District.find(params[:dst]).name %></h3><br>
+		<% end %>
+		<% @products.each do |product| %>
+			<div class="col-md-3 text-center">
+				<div class="product-wrapper">
+					<%= image_tag(product.product_image.normal) if product.product_image? %>
+					<h4><%= link_to product.name, product_path(product) %></h4>
+					<h4><%= humanized_money_with_symbol(product.price_cents) %></h4>
+					<h5><%= product.user.email %></h5>
+					<%= link_to "Buy", new_product_purchase_path(product), class: "btn btn-primary form-control" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

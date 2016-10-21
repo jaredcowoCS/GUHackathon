@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-8 box center-block text-center">
+	<div class="col-md-7 box center-block text-center">
 		<h3><%= @product.name %></h3>
 		<h4>Seller: <%= link_to @product.user.email, root_path %></h4>
 		<%= image_tag(@product.product_image) if @product.product_image? %>

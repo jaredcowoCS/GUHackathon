@@ -1,3 +1,15 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.products-index{
+	margin-top: 20px;
+	ul{
+		margin-top: 20px;
+		list-style-type: none; 
+			padding: 0px;
+		li{
+			padding-bottom: 8px;
+		}
+	}
+}

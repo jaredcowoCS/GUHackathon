@@ -20,6 +20,7 @@ gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem "mini_magick"
 gem 'money-rails'
 gem 'pundit'
+gem 'will_paginate', '~> 3.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

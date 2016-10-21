@@ -99,7 +99,7 @@ body{
 
 .btn{
 	border: none!important;
-	border-radius: 3px;
+	border-radius: 0px!important;
 	padding-top: 7px;
 	padding-bottom: 7px;
 }
@@ -172,7 +172,7 @@ body{
     text-align: left;
  }
 
-input[type="text"], input[type="number"]{
+input[type="text"], input[type="number"], input[type="email"], input[type="password"]{
 	background-color: #f7f7f7;
 	border: none;
 }

@@ -1,8 +1,6 @@
 class District < ActiveRecord::Base
 	has_many :users
+	has_many :products
 
-	def district_name
-    "#{name}"
-  	end
 
 end
