@@ -14,7 +14,7 @@
 
 <div class="row latest">
 	<h3 class="text-center row-title">Latest</h3>
-	<% Product.order("created_at DESC").limit(8).each do |product| %>
+	<% Product.order("created_at DESC").where.not(quantity: 0).limit(8).each do |product| %>
 	<div class="col-md-3 text-center">
 		<div class="product-wrapper">
 			<%= image_tag(product.product_image.normal) if product.product_image? %>

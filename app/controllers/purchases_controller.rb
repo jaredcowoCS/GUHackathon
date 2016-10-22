@@ -16,6 +16,8 @@ class PurchasesController < ApplicationController
 			seller_amount = User.find(@product.user).balance.amount_cents += @product.price_cents
 			User.find(@product.user).balance.update_attribute(:amount_cents, seller_amount)
 
+			@product.decrement!(:quantity, 1)
+
 			# Save purchase details
 			@purchase = @product.purchases.new
 			@purchase.seller = @product.user

@@ -1,0 +1,12 @@
+<div class="row">
+	<% @sellers.each do |seller| %>
+		<div class="col-md-3 text-center">
+			<div class="box">
+				<h4><%= seller.name %></h4>
+				<h4><%= pluralize(seller.products.count, "item")%></h4>
+				<h4><%= seller.district.name %></h4>
+				<%= link_to "Visit", seller_path(seller), class: "btn btn-secondary" %>
+			</div>
+		</div>
+	<% end %>
+</div>

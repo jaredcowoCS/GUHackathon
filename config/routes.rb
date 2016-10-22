@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sellers/index'
+
   root 'pages#home'
 
   get '/search', to: 'pages#search'
@@ -18,5 +20,5 @@ Rails.application.routes.draw do
   	resources :purchases
   end
   resources :balances
-  resources :users
+  resources :sellers, only: [:index, :show]
 end
