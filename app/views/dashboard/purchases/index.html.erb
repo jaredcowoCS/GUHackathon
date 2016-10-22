@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="box">
-			<h3 class="text-center">Recently Sold</h3><br>
+			<h3 class="text-center">Your Recent Sales</h3><br>
 			<% @sold.each do |sold| %>
 				<div class="row">
 					<div class="col-md-4">
 						<h4><%= sold.product.name %></h4>
-						<h4>Price: <%= humanized_money_with_symbol(sold.product.price_cents) %></h4>
+						<h5>Sale Price: <%= humanized_money_with_symbol(sold.product.price_cents) %></h5>
 					</div>
 					<div class="col-md-3">
 						<%= image_tag(sold.product.product_image.tiny) if sold.product.product_image.tiny.present? %>	
@@ -17,6 +17,7 @@
 						<h5>Bought: <%= sold.created_at.strftime("%m/%d/%Y") %></h5>
 					</div>
 				</div>
+				<h5 class="success">Gains After 2% Deduction: $<%= (sold.product.price_cents * (0.98/1.0)) %></h5>
 				<hr>
 			<% end %>
 		</div>
