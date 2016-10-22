@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   	resources :purchases
   end
   resources :balances
+  resources :users
 end

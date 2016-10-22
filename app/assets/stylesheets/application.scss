@@ -26,6 +26,10 @@ body{
 	color: #54573A;
 }
 
+.danger{
+	color: $red!important;
+}
+
 .container{
 	width: 75%;
 }
@@ -51,7 +55,7 @@ body{
 	
 	.navbar-brand{
 		font-family: 'Lalezar', cursive;
-		font-size: 28px;
+		font-size: 26px;
 		line-height: 90px;
 	}
 
@@ -74,7 +78,7 @@ body{
 .product-wrapper{
 	background-color: #FFF;
 	border: 1px solid #E1E3DF;
-	margin-bottom: 14px;
+	margin-bottom: 24px;
 	img{
 		width:100%;
 		height: auto;

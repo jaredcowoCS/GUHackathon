@@ -9,14 +9,18 @@ class PurchasesController < ApplicationController
 	def create
 		@product = Product.find(params[:product_id])
 		if current_user.balance.amount_cents >= @product.price_cents
-			amount = current_user.balance.amount_cents - @product.price_cents
-			current_user.balance.update_attribute(:amount_cents, amount)
+			# Update buyer and seller balance
+			# This is where the transaction between the bank, seller, and buyer will take place
+			buyer_amount = current_user.balance.amount_cents - @product.price_cents
+			current_user.balance.update_attribute(:amount_cents, buyer_amount)
+			seller_amount = User.find(@product.user).balance.amount_cents += @product.price_cents
+			User.find(@product.user).balance.update_attribute(:amount_cents, seller_amount)
+
+			# Save purchase details
 			@purchase = @product.purchases.new
 			@purchase.seller = @product.user
 			@purchase.buyer = current_user
 			if @purchase.save
-				# This is where the transaction between the bank, seller,and buyer would take place
-				# A success code shall be returned if transaction was successful
 				flash[:success] = "Payment processed, expect contact from seller soon"
 				redirect_to root_path
 			else

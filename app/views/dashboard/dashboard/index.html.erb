@@ -1,21 +1,17 @@
-<div class="box">
-	<div class="col-md-5 center-block">
-		<%= form_for [current_user.balance], method: :put do |f| %>
-			<div class="input-group">
-				<%= text_field_tag 'codes[code]', "", class: "form-control", placeholder: "Enter your giftcard code" %>
-				<span class="input-group-btn">
-					<%= f.submit "Go", class: "btn btn-secondary" %>
-				</span>
-			</div>
-		<% end %> 
-	</div>
-	<h3 class="text-center">Your Balance: <%= humanized_money_with_symbol(current_user.balance.amount_cents) %></h3>
-	<hr>
-	
-	<div class="row">
-		<h3 class="text-center">Recently Sold</h3>
-	</div>
-	<div class="row">
-		<h3 class="text-center">Recently purchased</h3>
-	</div>
+<div class="row">
+	<div class="box">
+		<h3 class="text-center">Welcome, <%= current_user.name %></h3>
+		<h4 class="text-center">Your Balance: <%= humanized_money_with_symbol(current_user.balance.amount_cents) %></h4><br>
+		<div class="col-md-5 center-block">
+			<%= form_for [current_user.balance], method: :put do |f| %>
+				<div class="input-group">
+					<%= text_field_tag 'codes[code]', "", class: "form-control", placeholder: "Enter claim code" %>
+					<span class="input-group-btn">
+						<%= f.submit "Redeem", class: "btn btn-secondary" %>
+					</span>
+				</div>
+			<% end %> 
+		</div>
+	</div>	
 </div>
+

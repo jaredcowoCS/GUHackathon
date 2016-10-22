@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021043904) do
+ActiveRecord::Schema.define(version: 20161022003145) do
 
   create_table "balances", force: :cascade do |t|
     t.integer  "shop_id"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20161021043904) do
     t.integer  "buyer_id"
     t.integer  "district_id"
     t.string   "name"
+    t.string   "profile_image"
   end
 
   add_index "users", ["buyer_id"], name: "index_users_on_buyer_id"

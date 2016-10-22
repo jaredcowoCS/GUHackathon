@@ -1,5 +1,7 @@
 class BalancesController < ApplicationController
-	# Update user's current balance
+	
+	# Update buyers balance
+	# Update sellers balance
 	def update
 		# NOTE: Performance Heavy, use indexes as alternative
 		@code = Code.where(code: params[:codes][:code]).first 
