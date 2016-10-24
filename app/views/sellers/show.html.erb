@@ -1,6 +1,8 @@
 <div class="row">
-	<h3 class="text-center row-title">Products</h3>
-	<% @seller.products.order("created_at DESC").where.not(quantity: 0).limit(4).each do |product| %>
+	<p class="text-center"><%= image_tag(@seller.profile_image.tiny) if @seller.profile_image.tiny.present? %></p>
+	<h4 class="text-center"><%= @seller.name %></h4>
+	<h4 class="text-center row-title">Products</h4>
+	<% @seller.products.order("created_at DESC").where.not(quantity: 0).limit(12).each do |product| %>
 		<div class="col-md-3 text-center">
 			<div class="product-wrapper">
 				<%= image_tag(product.product_image.normal) if product.product_image? %>

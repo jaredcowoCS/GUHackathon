@@ -1,7 +1,13 @@
 
 <div class="banner">
 	<div class="headline">
-		<h2 class="text-center">Register today and start growing your enterprise</h2>
+		<h2 class="text-center">
+			<% if user_signed_in? %>
+				Start growing your enterprise
+			<% else %>
+				Register today and start growing your enterprise
+			<% end %>
+		</h2>
 		<% if user_signed_in? %>
 		    <%= link_to "Dashboard", dashboard_path, class: "btn btn-secondary btn-lg" %>
 		<% else %>

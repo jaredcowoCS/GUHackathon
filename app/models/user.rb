@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  mount_uploader :product_image, ProfileImageUploader
+  mount_uploader :profile_image, ProfileImageUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

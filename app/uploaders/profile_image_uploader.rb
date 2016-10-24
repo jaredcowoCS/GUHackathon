@@ -24,7 +24,7 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
   end
 
   version :tiny do
-    process :resize_to_fill => [75, 75]
+    process :resize_to_fill => [85, 85]
   end
 
   def extension_whitelist

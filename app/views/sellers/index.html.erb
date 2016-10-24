@@ -3,7 +3,8 @@
 		<div class="col-md-3 text-center seller-each">
 			<div class="box">
 				<h4><%= seller.name %></h4>
-				<h4><%= pluralize(seller.products.count, "item")%></h4>
+				<%= image_tag(seller.profile_image.tiny) if seller.profile_image.tiny.present? %>
+				<h5><%= seller.address %></h5>
 				<%= link_to "Visit", seller_path(seller), class: "btn btn-secondary" %>
 			</div>
 		</div>
