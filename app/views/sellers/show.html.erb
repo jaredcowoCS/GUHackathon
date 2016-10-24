@@ -1,0 +1,13 @@
+<div class="row">
+	<h3 class="text-center row-title">Products</h3>
+	<% @seller.products.order("created_at DESC").limit(4).each do |product| %>
+		<div class="col-md-3 text-center">
+			<div class="product-wrapper">
+				<%= image_tag(product.product_image.normal) if product.product_image? %>
+				<h4><%= link_to product.name, product_path(product) %></h4>
+				<h4><%= humanized_money_with_symbol(product.price_cents) %></h4>
+				<h5><%= @seller.email %></h5>
+			</div>
+		</div>
+	<% end %>
+</div>
