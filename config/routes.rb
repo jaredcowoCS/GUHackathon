@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :dashboard do
+  get 'users/update'
+  end
+
   get 'sellers/index'
 
   root 'pages#home'
@@ -14,6 +18,7 @@ Rails.application.routes.draw do
 
     resources :products
     resources :purchases
+    resources :users
   end
 
   resources :products, only: [:index, :show] do
