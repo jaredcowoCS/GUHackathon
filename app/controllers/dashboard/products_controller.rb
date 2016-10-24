@@ -20,6 +20,12 @@ class Dashboard::ProductsController < ApplicationController
   	end
   end
 
+  def destroy
+    Product.find(params[:id]).destroy
+    flash[:success] = "Porduct has been removed"
+    redirect_to dashboard_path
+  end
+
   private	
   	def product_params
   		params.require(:product).permit(:name, :price_cents, :quantity, :description, :product_image, :user_id).merge(district_id: current_user.district.id)
