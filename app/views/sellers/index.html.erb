@@ -1,6 +1,6 @@
 <div class="row">
 	<% @sellers.each do |seller| %>
-		<div class="col-md-3 text-center">
+		<div class="col-md-3 text-center seller-each">
 			<div class="box">
 				<h4><%= seller.name %></h4>
 				<h4><%= pluralize(seller.products.count, "item")%></h4>
