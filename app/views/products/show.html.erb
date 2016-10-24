@@ -1,23 +1,26 @@
-<div class="row">
-	<div class="col-md-7 box center-block text-center">
-		<h3><%= @product.name %></h3>
-		<h4>Seller: <%= link_to @product.user.email, root_path %></h4>
-		<%= image_tag(@product.product_image) if @product.product_image? %>
-		<h4>Price: <%= humanized_money_with_symbol(@product.price_cents) %></h4>
-		<h4>Quantity: <%= @product.quantity %></h4>
-		<p><%= @product.description %></p>
-		<%=link_to "Purchase", new_product_purchase_path(@product), class: "btn btn-secondary" %>
-	</div>
-</div>
-
-<div class="row">
-	<h3 class="text-center row-title">Other products</h3>
-	<% Product.where.not(id: @product.id).limit(4).each do |product| %>
-		<div class="col-md-3">
-			<div class="product-wrapper">
-				<%= image_tag(product.product_image.normal) if product.product_image? %>
-				<h4 class="text-center"><%= link_to product.name, product_path(product) %></h4>
-			</div>
+<h4><%= link_to @product.user.email, root_path %></h4>
+<div class="wrapper">
+	<div class="row">
+		<div class="col-md-6">
+			<%= image_tag(@product.product_image) if @product.product_image? %>
 		</div>
-	<% end %>
+		<div class="col-md-6">
+			<h3><%= @product.name %></h3>
+			<h4>Price: <%= humanized_money_with_symbol(@product.price_cents) %></h4>
+			<h4>Quantity: <%= @product.quantity %></h4>
+			<p><%= @product.description %></p>
+			<%=link_to "Purchase", new_product_purchase_path(@product), class: "btn btn-secondary form-control" %>
+		</div>
+	</div>
+	<div class="row">
+		<h3 class="text-center row-title">Other products</h3>
+		<% Product.where.not(id: @product.id).limit(4).each do |product| %>
+			<div class="col-md-3">
+				<div class="">
+					<%= image_tag(product.product_image.normal) if product.product_image? %>
+					<h4 class="text-center"><%= link_to product.name, product_path(product) %></h4>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>

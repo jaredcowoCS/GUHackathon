@@ -1,11 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    if params[:dst].present?
-      @products = Product.where(district: params[:dst]).paginate(:page => params[:page], :per_page => 20).order("created_at DESC")
-    else
-    	@products = Product.paginate(:page => params[:page], :per_page => 20).order("created_at DESC")
-    end
+    @products = Product.paginate(:page => params[:page], :per_page => 20).order("created_at DESC")
   end
 
   def show

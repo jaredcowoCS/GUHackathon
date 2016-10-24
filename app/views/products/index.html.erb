@@ -1,16 +1,5 @@
 <div class="row products-index">
-	<div class="col-md-2">
-		<h3>Districts</h3>
-		<ul>
-			<% District.all.each do |district| %>
-				<li><%= link_to district.name, products_path(dst: district.id) %></li>
-			<% end %>
-		</ul>
 	</div>
-	<div class="col-md-10">
-		<%if params[:dst].present? %>
-			<h3 class="text-center">Products in <%= District.find(params[:dst]).name %></h3><br>
-		<% end %>
 		<% @products.each do |product| %>
 			<div class="col-md-3 text-center">
 				<div class="product-wrapper">
@@ -22,5 +11,4 @@
 				</div>
 			</div>
 		<% end %>
-	</div>
 </div>
