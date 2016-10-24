@@ -4,5 +4,6 @@ class SellersController < ApplicationController
   end
 
   def show
+  	@seller = User.find(params[:id])
   end
 end
