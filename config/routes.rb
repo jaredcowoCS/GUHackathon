@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  namespace :dashboard do
-  get 'users/update'
-  end
-
-  get 'sellers/index'
 
   root 'pages#home'
-
   get '/search', to: 'pages#search'
 
   devise_for :users,
