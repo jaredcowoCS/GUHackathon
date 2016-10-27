@@ -15,7 +15,7 @@
 		    	<% @products.each do |product| %>
 				  <tr>
 			        <td><%= product.name %></td>
-			        <td><%= image_tag(product.product_image.tiny) if product.product_image.tiny.present? %></td>
+			        <td><%= image_tag(product.product_image_url(:tiny)) if product.product_image.tiny.present? %></td>
 			        <td><%= product.quantity %></td>
 			        <td><%= humanized_money_with_symbol(product.price_cents) %></td>
 			        <td><%= link_to "Edit", root_path, class: "btn btn-secondary btn-xs" %> <%= link_to "Delete", dashboard_product_path(product), method: :delete, class: "btn btn-danger btn-xs" %></td>
