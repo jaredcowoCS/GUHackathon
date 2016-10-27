@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024025759) do
+ActiveRecord::Schema.define(version: 20161027133436) do
 
   create_table "balances", force: :cascade do |t|
     t.integer  "shop_id"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20161024025759) do
 
   add_index "balances", ["shop_id"], name: "index_balances_on_shop_id"
   add_index "balances", ["user_id"], name: "index_balances_on_user_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "codes", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -90,9 +97,11 @@ ActiveRecord::Schema.define(version: 20161024025759) do
     t.string   "name"
     t.string   "profile_image"
     t.string   "address"
+    t.integer  "category_id"
   end
 
   add_index "users", ["buyer_id"], name: "index_users_on_buyer_id"
+  add_index "users", ["category_id"], name: "index_users_on_category_id"
   add_index "users", ["district_id"], name: "index_users_on_district_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
