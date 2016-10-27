@@ -5,14 +5,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   include Cloudinary::CarrierWave
 
-  process :auto_orient
   process resize_to_fit: [250, 250]
-
-  def auto_orient
-    manipulate! do |image|
-      image.tap(&:auto_orient)
-    end
-  end
 
   version :normal do
     process :resize_to_fill => [240, 240]
