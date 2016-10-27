@@ -116,11 +116,10 @@ body{
 	.headline{
 		position: absolute;
 		width: 100%;
-		top: 50%;
+		bottom: 0;
 		color: #FFF;
 		margin: 0 auto;
         text-align: center;
-        transform: translateY(-50%);
 	}
 }
 
