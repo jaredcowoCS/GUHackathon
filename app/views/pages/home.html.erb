@@ -10,16 +10,16 @@
 <div class="row latest">
 	<h3 class="text-center row-title">Recently Added</h3>
 	<% Product.order("created_at DESC").where.not(quantity: 0).limit(8).each do |product| %>
-	<div class="col-md-3 text-center">
-		<div class="product-wrapper">
-			<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
-			<h4><%= link_to product.name, product_path(product) %></h4>
-			<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
-			<h5><%= product.user.name %></h5>
-			<h5><%= product.user.address %></h5>
-			<%= link_to "Buy", new_product_purchase_path(product), class: "btn btn-primary form-control" %>
+		<div class="col-md-3 text-center">
+			<div class="product-wrapper">
+				<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
+				<h4><%= link_to product.name, product_path(product) %></h4>
+				<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
+				<h5><%= product.user.name %></h5>
+				<h5><%= product.user.address %></h5>
+				<%= link_to "Buy", new_product_purchase_path(product), class: "btn btn-primary form-control" %>
+			</div>
 		</div>
-	</div>
 	<% end %>
 </div>
 
@@ -47,6 +47,18 @@
 
 <div class="row near-you">
 	<h3 class="text-center row-title">Near Your Location</h3>
+	<% Product.order("created_at DESC").where.not(quantity: 0).limit(8).each do |product| %>
+		<div class="col-md-3 text-center">
+			<div class="product-wrapper">
+				<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
+				<h4><%= link_to product.name, product_path(product) %></h4>
+				<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
+				<h5><%= product.user.name %></h5>
+				<h5><%= product.user.address %></h5>
+				<%= link_to "Buy", new_product_purchase_path(product), class: "btn btn-primary form-control" %>
+			</div>
+		</div>
+	<% end %>
 </div>
 
 
