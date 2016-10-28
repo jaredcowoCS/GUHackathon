@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
-  get '/search', to: 'pages#search'
+  get '/features', to: 'pages#features'
 
   devise_for :users,
              controllers: { registrations: "registrations" }

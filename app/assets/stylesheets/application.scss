@@ -20,12 +20,13 @@
 
 $dark: #4A4A4A;
 $red: #EE543A;
+$green: #71BA51;
 
 body{
 	font-family: 'Roboto', sans-serif;
 	background-color: #FFF;
 	color: $dark;
-    padding-top: 90px;
+    padding-top: 120px;
 }
 
 .wrapper{
@@ -55,7 +56,7 @@ body{
 	background-color: #fff;
 	height: 90px;
 	font-size: 16px;
-	border-bottom: 2px solid #f7f7f7;
+	border-bottom: 1px solid #f7f7f7;
  	z-index: 20;
 	a{
 		color: $dark!important;
@@ -96,8 +97,12 @@ body{
 		height: auto;
 	}
 	h4 > a{
-		color: #54573A!important;
+		color: $dark!important;
 	}
+}
+
+.price{
+	color: $green;
 }
 
 .logo{
@@ -216,6 +221,18 @@ textarea{
 	background-color: #f7f7f7!important;
 	border: none!important;
 	resize: none;
+}
+
+.box-decorated{
+	padding: 20px;
+	background: #7BB0A6;
+	color: #FFF;
+	border-radius: 2px;
+}
+
+.user-wrapper{
+	border: 1px solid #f7f7f7;
+	padding: 20px;
 }
 
 footer{

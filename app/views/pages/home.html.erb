@@ -14,8 +14,8 @@
 		<div class="product-wrapper">
 			<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
 			<h4><%= link_to product.name, product_path(product) %></h4>
-			<h4><%= humanized_money_with_symbol(product.price_cents) %></h4>
-			<h5><%= product.user.email %></h5>
+			<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
+			<h5><%= product.user.name %></h5>
 			<h5><%= product.user.address %></h5>
 			<%= link_to "Buy", new_product_purchase_path(product), class: "btn btn-primary form-control" %>
 		</div>
@@ -23,11 +23,31 @@
 	<% end %>
 </div>
 
-<div class="row recent-sellers">
-	<h3 class="text-center row-title">Recent Sellers</h3>
+<div class="row">
+	<hr>
+	<h3 class="text-center row-title">Incredibly Versatile</h3>
+	<div class="col-md-4">
+		<div class="box-decorated">
+			<h4 class="text-center">Belizean tailored</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur adipisci, qui itaque consequuntur dolore eveniet tempora et quidem tempore doloremque facere illum eos, impedit rem minus, dicta excepturi maxime sed.</p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="box-decorated">
+			<h4 class="text-center">Seamless delivery integration</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur adipisci, qui itaque consequuntur dolore eveniet tempora et quidem tempore doloremque facere illum eos, impedit rem minus, dicta excepturi maxime sed.</p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="box-decorated">
+			<h4 class="text-center">Local payment methods</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur adipisci, qui itaque consequuntur dolore eveniet tempora et quidem tempore doloremque facere illum eos, impedit rem minus, dicta excepturi maxime sed.</p>
+		</div>
+	</div>
 </div>
 
 <div class="row near-you">
 	<h3 class="text-center row-title">Near You</h3>
 </div>
+
 
