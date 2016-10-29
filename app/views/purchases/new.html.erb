@@ -3,11 +3,11 @@
 	<h4 class="text-center">Your Balance: <%= humanized_money_with_symbol(current_user.balance.amount_cents) %></h4><br>
 	<div class="row purchase-details">
 		<div class="col-md-7 pull-left">
-			<%= image_tag(@product.product_image) if @product.product_image? %>
+			<%= image_tag(@product.product_image_url(:normal)) if @product.product_image? %>
 		</div>
 		<div class="col-md-5">
-			<h4><strong><%= @product.name %></strong></h4>
-			<h4><%= humanized_money_with_symbol(@product.price_cents)%></h4>
+			<h4><%= @product.name %></h4>
+			<h4 class="price"><%= humanized_money_with_symbol(@product.price_cents)%></h4>
 			<p><%= @product.description %></p>
 		</div>
 	</div>
