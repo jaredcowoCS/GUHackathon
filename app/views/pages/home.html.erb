@@ -9,7 +9,7 @@
 		<div class="col-md-3 text-center">
 			<%= link_to product_path(product) do %>
 			<div class="product-wrapper">
-				<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
+				<%= cl_image_tag(product.product_image_url, :width => 95, :height => 95, :crop => :crop) if product.product_image? %>
 				<h4><%= product.name %></h4>
 				<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
 				<h5><%= product.user.name %></h5>

@@ -5,7 +5,6 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   include Cloudinary::CarrierWave
 
-  process resize_to_fit: [250, 250]
   process :convert => 'png'
 
   version :normal do
