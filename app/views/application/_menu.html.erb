@@ -5,7 +5,7 @@
 			<% if role == "normal" %>
 				<%= link_to "Belize Enterprises", root_path %>
 			<% else %>
-				<%= link_to "BPMS Delivery", root_path %>
+				<%= link_to "BPMS Delivery", dashboard_path %>
 			<% end %>
 		</li>
 		<li>
@@ -20,7 +20,7 @@
 			</li>
 		<% elsif role == "delivery" %>
 			<li><%= link_to "Orders", dashboard_orders_path %></li>
-			<li><%= link_to "Staff", dashboard_orders_path %></li>
+			<li><%= link_to "Staff", dashboard_staff_path %></li>
 		<% end %>
 		<li>
 			<%= link_to "Account", dashboard_account_path %>

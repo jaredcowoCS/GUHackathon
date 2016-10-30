@@ -8,4 +8,9 @@ class Dashboard::DashboardController < ApplicationController
   def account
   end
 
+  # BPMS staff
+  def staff
+ 	@users = User.where(role: 1).order("created_at DESC")
+  end
+
 end

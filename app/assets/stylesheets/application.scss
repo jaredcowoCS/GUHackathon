@@ -95,6 +95,7 @@ a{
 	background-color: #FFF;
 	padding: 20px;
 	border: 1px solid #E1E3DF;
+	border-radius: 3px;
 }
 
 .seller{
@@ -143,12 +144,15 @@ a{
 		width: 100%;
 		height: auto;
 	}
-	.headline{
+	.banner-text{
 		position: absolute;
+		background-color: #FF7416;
+		opacity: 0.8;
 		width: 100%;
 		bottom: 0;
 		color: #FFF;
 		margin: 0 auto;
+		padding-bottom: 6px;
         text-align: center;
 	}
 }
@@ -255,10 +259,30 @@ textarea{
 	padding: 20px;
 }
 
+/* Footer Styles */
 footer{
 	padding: 20px 0;
 	padding-top: 30px;
 	text-align: center;
 	border-top: 1px solid #E0E4CC; 
 	margin-top: 60px;
+
+	.footer-nav{
+		margin-bottom: 14px;
+		font-size: 12px;
+		h4{
+			font-size: 16px;
+		}
+		ul{
+			list-style: none;
+			padding-left: 0;
+			li{
+				padding-left: 0;
+					padding-bottom: 10px;
+				a{
+					color: $dark;
+				}
+			}
+		}
+	}
 }

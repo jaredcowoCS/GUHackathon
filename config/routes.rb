@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get '/', to: 'dashboard#index'
     get '/account', to: 'dashboard#account'
+    get '/staff', to: 'dashboard#staff'
 
     resources :products
     resources :purchases

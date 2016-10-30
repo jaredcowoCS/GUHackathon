@@ -1,0 +1,13 @@
+<div class="row staff">
+	<h3 class="text-center">BPMS Staff Members</h3>
+	<p class="text-center"><%= link_to "New Staff Member", "#", class: "btn btn-secondary btn-sm" %></p>
+	<% @users.each do |user| %>
+		<div class="col-md-2">
+			<div class="box text-center">
+				<h4><%= user.name %></h4>
+				<h5><%= user.email %></h5>
+				<%= image_tag(user.profile_image_url(:tiny)) if user.profile_image? %>
+			</div>
+		</div>
+	<% end %>
+</div>
