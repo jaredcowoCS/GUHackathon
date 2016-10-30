@@ -259,6 +259,28 @@ textarea{
 	padding: 20px;
 }
 
+/* Text Underline Styles */
+.underline{
+  position: relative;
+  margin-bottom: 2.667em;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 68px;
+    background: $red;
+    left: 50%;
+    bottom: -1em;
+}
+
+.underline.text-center::after {
+    left: 50%;
+    margin-left: -34px;
+}
+
 /* Footer Styles */
 footer{
 	padding: 20px 0;
