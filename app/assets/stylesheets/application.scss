@@ -21,12 +21,21 @@
 $dark: #4A4A4A;
 $red: #EE543A;
 $green: #71BA51;
+$gray: #BDBDBD;
 
+/* GLOBAL STYLES*/
 body{
 	font-family: 'Roboto', sans-serif;
 	background-color: #F5F5F1;
 	color: $dark;
     padding-top: 90px;
+}
+
+a{
+	&:hover{
+		text-decoration: none;
+	}
+
 }
 
 .wrapper{
@@ -67,8 +76,9 @@ body{
 	}
 	
 	.navbar-brand{
-		font-size: 19px;
+		font-size: 21px;
 		line-height: 90px;
+		color: #FF7416!important;
 	}
 
 	.input-group {
@@ -87,12 +97,19 @@ body{
 	border: 1px solid #E1E3DF;
 }
 
+.seller{
+		color: $gray!important;
+	}
+
 .product-wrapper{
 	background-color: #FFF;
 	border: 1px solid #E1E3DF;
 	border-radius: 3px;
-	h4 > a{
-		color: $dark!important;
+	color: $dark;
+	text-decoration: none!important;
+	img{
+		width: 100%;
+		height: auto
 	}
 }
 
@@ -234,5 +251,6 @@ footer{
 	padding: 20px 0;
 	padding-top: 30px;
 	text-align: center;
+	border-top: 1px solid #E0E4CC; 
 	margin-top: 60px;
 }
