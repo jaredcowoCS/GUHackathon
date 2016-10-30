@@ -1,0 +1,23 @@
+<div class="row">
+	<h3 class="text-center">Latest Orders</h3> <br>
+	<% Order.order("created_at DESC").each do |order| %>
+		<div class="col-md-6 center-block box order-wrapper">
+			<h4 class="text-center">Order for <%= order.purchase.product.name %></h4><br>
+			<div class="row">
+				<div class="col-md-6">
+					<%= image_tag(order.purchase.product.product_image_url(:normal)) if order.purchase.product.product_image? %>
+				</div>
+				<div class="col-md-6">
+					<h5>Seller: <%= order.purchase.seller.name %></h5>
+					<h5>Address: <%= order.purchase.seller.address %></h5>
+					<hr>
+					<h5>Buyer: <%= order.purchase.buyer.name %></h5>
+					<h5>Address: <%= order.purchase.seller.address %></h5>
+					<h5>Phone: <%= order.purchase.seller.phone %></h5>
+					<%= link_to "Mark as processed", "#", class: "btn btn-secondary btn-sm form-control" %>
+				</div>
+			</div>
+			<h5 class="text-center gray">placed <%= time_ago_in_words(order.created_at) %></h5>
+		</div>
+	<% end %>
+</div>

@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-	def shop
-		current_user.shop
+	def role
+	  current_user.role
 	end
 end

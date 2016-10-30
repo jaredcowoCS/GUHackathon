@@ -1,18 +1,24 @@
-<div class="col-md-8 box center-block">
+<div class="col-md-8 box center-block purchase-new">
 	<h3 class="text-center">Purchase Details</h3>
 	<h4 class="text-center">Your Balance: <%= humanized_money_with_symbol(current_user.balance.amount_cents) %></h4><br>
 	<div class="row purchase-details">
-		<div class="col-md-7 pull-left">
+		<div class="col-md-7 text-center">
 			<%= image_tag(@product.product_image_url(:normal)) if @product.product_image? %>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-5 ">
 			<h4><%= @product.name %></h4>
 			<h4 class="price"><%= humanized_money_with_symbol(@product.price_cents)%></h4>
-			<p><%= @product.description %></p>
+			<h4>Seller: <%= @product.user.email %></h4>
 		</div>
 	</div>
-	<h4 class="text-center">Seller: <%= @product.user.email %></h4><br>
+	<hr>
 	<%= form_for [@product, @purchase] do |f| %>
+		<h4>Would you like delivery?</h4>
+			<div class="form-group">
+				<%= check_box_tag('deliver', value = "1", checked = false, options = {}) %>
+				<%= label_tag "Delivery via BPMS" %>
+				<p>If checked, BPMS will contact you for further details.</p>
+			</div>
 		<div class="input-group">
 		   <span class="input-group-btn">
 				<%= f.submit "Confirm & Buy", class: "btn btn-secondary form-control" %>

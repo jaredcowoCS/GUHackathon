@@ -24,7 +24,7 @@ $green: #71BA51;
 $gray: #BDBDBD;
 
 /* GLOBAL STYLES*/
-body{
+body.primary{
 	font-family: 'Roboto', sans-serif;
 	background-color: #F5F5F1;
 	color: $dark;
@@ -98,8 +98,16 @@ a{
 }
 
 .seller{
-		color: $gray!important;
-	}
+	color: $gray!important;
+}
+
+.gray{
+	color: $gray;
+}
+
+.order-wrapper{
+	margin-bottom: 20px;
+}
 
 .product-wrapper{
 	background-color: #FFF;
@@ -147,7 +155,7 @@ a{
 
 .btn{
 	border: none!important;
-	border-radius: 0px!important;
+	border-radius: 3px!important;
 	padding-top: 7px;
 	padding-bottom: 7px;
 }
@@ -165,10 +173,10 @@ a{
 }
 
 .btn-secondary{
-	background: #71BA51;
+	background: #FF7416;
 	color: #fff;
 	&:hover{
-		background: #71BA51;
+		background: #FF7416;
 		color: #fff;
 		opacity: 0.9;
 	}

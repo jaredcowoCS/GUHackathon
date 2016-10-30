@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027133436) do
+ActiveRecord::Schema.define(version: 20161030071158) do
 
   create_table "balances", force: :cascade do |t|
     t.integer  "shop_id"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 20161027133436) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "purchase_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "orders", ["purchase_id"], name: "index_orders_on_purchase_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -98,6 +106,8 @@ ActiveRecord::Schema.define(version: 20161027133436) do
     t.string   "profile_image"
     t.string   "address"
     t.integer  "category_id"
+    t.integer  "role"
+    t.string   "phone"
   end
 
   add_index "users", ["buyer_id"], name: "index_users_on_buyer_id"

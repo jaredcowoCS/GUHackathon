@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :dashboard do
+  get 'orders/index'
+  end
+
   root 'pages#home'
   get '/features', to: 'pages#features'
 
@@ -13,6 +17,7 @@ Rails.application.routes.draw do
     resources :products
     resources :purchases
     resources :users
+    resources :orders
   end
 
   resources :products, only: [:index, :show] do
@@ -20,4 +25,5 @@ Rails.application.routes.draw do
   end
   resources :balances
   resources :sellers, only: [:index, :show]
+
 end

@@ -20,6 +20,7 @@ gem 'money-rails'
 gem 'pundit'
 gem 'will_paginate', '~> 3.1.0'
 gem 'cloudinary'
+gem 'geocoder'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

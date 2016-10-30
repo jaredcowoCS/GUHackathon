@@ -23,8 +23,15 @@ class PurchasesController < ApplicationController
 			@purchase.seller = @product.user
 			@purchase.buyer = current_user
 			if @purchase.save
-				flash[:success] = "Payment processed, expect contact from seller soon"
-				redirect_to root_path
+				# Delivery checked
+				if params[:deliver] == '1'
+					Order.create(purchase: @purchase)
+					flash[:success] = "Payment processed, expect contact from BPMS regarding delivery details."
+					redirect_to root_path
+				else
+					flash[:success] = "Payment processed, expect contact from seller soon"
+					redirect_to root_path
+				end
 			else
 				flash[:danger] = "Something went wrong, try again"
 				redirect_to root_path

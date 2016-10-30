@@ -10,4 +10,15 @@ class User < ActiveRecord::Base
   has_many :purchases, dependent: :destroy
 
   belongs_to :district
+
+  # user roles structure, default - seller
+  enum role: [:normal, :delivery, :admin]
+  # sets default role only if its a new record(i.e. object does not exist yet)
+  after_initialize :set_default_role, :if => :new_record?
+
+   # set default role for user
+  def set_default_role
+  	self.role ||= :normal
+  end
 end
+

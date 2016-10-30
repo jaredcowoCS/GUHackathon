@@ -2,17 +2,26 @@
 <div id="sidebar-wrapper">
 	<ul class="sidebar-nav">
 		<li class="sidebar-brand">
-			<%= link_to "Belize Enterprises", root_path %>
+			<% if role == "normal" %>
+				<%= link_to "Belize Enterprises", root_path %>
+			<% else %>
+				<%= link_to "BPMS Delivery", root_path %>
+			<% end %>
 		</li>
 		<li>
 			<%= link_to "Dashboard", dashboard_path %>
 		</li>
-		<li>
-			<%= link_to "Products", dashboard_products_path %>
-		</li>
-		<li>
-			<%= link_to "Purchases", dashboard_purchases_path %>
-		</li>
+		<% if role == "normal" %>
+			<li>
+				<%= link_to "Products", dashboard_products_path %>
+			</li>
+			<li>
+				<%= link_to "Purchases", dashboard_purchases_path %>
+			</li>
+		<% elsif role == "delivery" %>
+			<li><%= link_to "Orders", dashboard_orders_path %></li>
+			<li><%= link_to "Staff", dashboard_orders_path %></li>
+		<% end %>
 		<li>
 			<%= link_to "Account", dashboard_account_path %>
 		</li>
