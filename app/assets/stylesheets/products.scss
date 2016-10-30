@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$dark: #4A4A4A;
+$red: #EE543A;
+$green: #71BA51;
+$gray: #BDBDBD;
+
 .products-index{
 	margin-top: 20px;
 	ul{
@@ -14,7 +19,16 @@
 	}
 }
 
+.seller-info a{
+	color: $dark!important;
+}
+
+.other-products{
+	margin-top: 20px;
+}
+
 .show{
+	margin-top: 50px;
 	.product-image{
 		width: 100%;
 		height: auto;
