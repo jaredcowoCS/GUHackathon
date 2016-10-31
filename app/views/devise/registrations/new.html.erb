@@ -1,4 +1,4 @@
-<div class="col-md-6 center-block">
+<div class="col-md-6 center-block devise-form">
   <div class="box">
     <h2 class="text-center">Register</h2><br>
 
@@ -17,7 +17,14 @@
 
       <div class="form-group">
         <%= f.label :address %>
-        <%= f.text_field :address, class: "form-control", placeholder: "eg. santa elena, cayo" %>
+        <p class="gray">Please enter the address you currently live at. This information is important for delivery compatibility.</p>
+        <%= f.text_field :address, class: "form-control", placeholder: "eg. Santa Elena, Cayo or Ladyville, Belize" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :phone, "Phone Number" %>
+        <p class="gray">No other user will be able to see this information. It will also be used for our delivery integration.</p>
+        <%= f.text_field :phone, class: "form-control" %>
       </div>
 
       <div class="form-group">

@@ -1,9 +1,9 @@
 <div class="row show">
-		<div class="col-md-5 box">
+		<div class="col-md-6 box">
 			<%= image_tag(@product.product_image_url, class: "product-image") if @product.product_image? %>
 			
 		</div>
-		<div class="col-md-6 pull-right seller-wrapper">
+		<div class="col-md-5 pull-right seller-wrapper">
 			<div class="row">
 				<div class="col-md-6 seller-info">
 					<h3><%= @product.name %></h3>
@@ -22,12 +22,15 @@
 
 <div class="row other-products">
 		<h3 class="underline text-center">Other products</h3>
-		<% Product.where.not(id: @product.id).limit(4).each do |product| %>
+		<% Product.order("RANDOM()").where.not(id: @product.id).limit(4).each do |product| %>
 			<div class="col-md-3 text-center">
+				<%= link_to product_path(product) do %>
 				<div class="product-wrapper">
 					<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
-					<h4 class="text-center"><%= link_to product.name, product_path(product) %></h4>
+					<h5 class="text-center"><%= product.name %></h5>
+					<h5 class="text-center price">Price: <%= humanized_money_with_symbol(@product.price_cents) %></h5>
 				</div>
+				<% end %>
 			</div>
 		<% end %>
 </div>

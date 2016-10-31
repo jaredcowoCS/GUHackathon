@@ -2,7 +2,7 @@
 <div class="banner">
 	<%= image_tag "banner" %>
 	<div class="banner-text">
-		<h3>The premier Belizean way to sell stuff locally</h3>
+		<h3>The premier way to sell & buy stuff locally in Belize</h3>
 	</div>
 </div>
 
@@ -15,8 +15,8 @@
 				<div class="product-image-wrap">
 					<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
 				</div>
-				<h4><%= product.name %></h4>
-				<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
+				<h5><%= product.name %></h5>
+				<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
 				<h5 class="seller"><%= product.user.name %></h5>
 			</div>
 			<% end %>
@@ -28,36 +28,31 @@
 	<h3 class="underline text-center">Near Your Location</h3>
 	<% Product.order("created_at DESC").where.not(quantity: 0).limit(4).each do |product| %>
 		<div class="col-md-3 text-center">
+		<%= link_to product_path(product),class: "product-wrapper-link" do %>
 			<div class="product-wrapper">
 				<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
-				<h4><%= link_to product.name, product_path(product) %></h4>
-				<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
+				<h5><%= product.name %></h5>
+				<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
 				<h5 class="seller"><%= product.user.name %></h5>
 			</div>
+		<% end %>
 		</div>
 	<% end %>
 </div>
 
 <div class="row">
 	<h3 class="underline text-center">Locally Geared</h3>
-	<div class="col-md-4">
-		<div class="box">
+	<div class="col-md-6">
+		<div class="box incentive-one">
 			<h4 class="text-center">Belizean Tailored</h4><br>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur adipisci, qui itaque consequuntur dolore eveniet tempora et quidem tempore doloremque facere illum eos, impedit rem minus, dicta excepturi maxime sed.</p><br>
 			<p class="text-center"><%= link_to "Learn More", root_path, class: "btn btn-secondary" %></p>
 
 		</div>
 	</div>
-	<div class="col-md-4">
-		<div class="box">
+	<div class="col-md-6">
+		<div class="box incentive-second">
 			<h4 class="text-center">Seamless Delivery Integration</h4><br>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur adipisci, qui itaque consequuntur dolore eveniet tempora et quidem tempore doloremque facere illum eos, impedit rem minus, dicta excepturi maxime sed.</p><br>
-			<p class="text-center"><%= link_to "Learn More", root_path, class: "btn btn-secondary" %></p>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<div class="box">
-			<h4 class="text-center">Local Payment Methods</h4><br>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur adipisci, qui itaque consequuntur dolore eveniet tempora et quidem tempore doloremque facere illum eos, impedit rem minus, dicta excepturi maxime sed.</p><br>
 			<p class="text-center"><%= link_to "Learn More", root_path, class: "btn btn-secondary" %></p>
 		</div>
@@ -68,12 +63,14 @@
 	<h3 class=" underline text-center">Notable Sellers</h3>
 	<% Product.order("created_at DESC").where.not(quantity: 0).limit(4).each do |product| %>
 		<div class="col-md-3 text-center">
+		<%= link_to product_path(product),class: "product-wrapper-link" do %>
 			<div class="product-wrapper">
 				<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
-				<h4><%= link_to product.name, product_path(product) %></h4>
-				<h4 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h4>
+				<h5><%= product.name %></h5>
+				<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
 				<h5 class="seller"><%= product.user.name %></h5>
 			</div>
+		<% end %>
 		</div>
 	<% end %>
 </div>

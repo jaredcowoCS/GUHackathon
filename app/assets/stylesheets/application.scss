@@ -24,6 +24,10 @@ $green: #71BA51;
 $gray: #BDBDBD;
 
 /* GLOBAL STYLES*/
+.devise-form{
+	margin-top: 50px;
+}
+
 body.primary{
 	font-family: 'Roboto', sans-serif;
 	background-color: #F5F5F1;
@@ -146,8 +150,8 @@ a{
 	}
 	.banner-text{
 		position: absolute;
-		background-color: #FF7416;
-		opacity: 0.8;
+		background-color: #000;
+		opacity: 0.7;
 		width: 100%;
 		bottom: 0;
 		color: #FFF;
@@ -236,6 +240,16 @@ a{
     text-align: left;
  }
 
+.incentive-one{
+	background-color: #F29B34;
+	color: #FFF;
+}
+
+.incentive-second{
+	background-color: #FCB941;
+	color: #FFF;
+}
+
 input[type="text"], input[type="number"], input[type="email"], input[type="password"]{
 	background-color: #f7f7f7;
 	border: none;
@@ -277,7 +291,7 @@ textarea{
     display: block;
     height: 5px;
     width: 68px;
-    background: $green;
+    background: #F29B34;
     left: 50%;
     bottom: -1em;
 }
@@ -292,7 +306,7 @@ footer{
 	padding: 20px 0;
 	padding-top: 30px;
 	text-align: center;
-	border-top: 1px solid #E0E4CC; 
+	border-top: 1px solid #E0E0E0; 
 	margin-top: 60px;
 
 	.footer-nav{
