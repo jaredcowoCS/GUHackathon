@@ -42,6 +42,9 @@ body.primary{
 }
 
 a{
+	&:focus{
+		outline: none;
+	}
 	&:hover{
 		text-decoration: none;
 	}
