@@ -12,12 +12,12 @@
 		<div class="col-md-3 text-center">
 			<%= link_to product_path(product),class: "product-wrapper-link" do %>
 			<div class="product-wrapper">
-				<div class="product-image-wrap">
-					<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
+				<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
+				<div class="product-details">
+					<h5><%= product.name %></h5>
+					<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
+					<h5 class="seller"><%= product.user.name %></h5>
 				</div>
-				<h5><%= product.name %></h5>
-				<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
-				<h5 class="seller"><%= product.user.name %></h5>
 			</div>
 			<% end %>
 		</div>
@@ -68,9 +68,11 @@
 		<%= link_to product_path(product),class: "product-wrapper-link" do %>
 			<div class="product-wrapper">
 				<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
-				<h5><%= product.name %></h5>
-				<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
-				<h5 class="seller"><%= product.user.name %></h5>
+				<div class="product-details">
+					<h5><%= product.name %></h5>
+					<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
+					<h5 class="seller"><%= product.user.name %></h5>
+				</div>
 			</div>
 		<% end %>
 		</div>
