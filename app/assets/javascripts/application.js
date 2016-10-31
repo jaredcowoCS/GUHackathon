@@ -22,5 +22,6 @@ $(document).ready(function(){
 			$(this).remove();
 		});
 	}, 3500);
-	
+
+	$('.product-wrapper').matchHeight();
 });
