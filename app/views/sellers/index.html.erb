@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row sellers-index">
 	<% @sellers.each do |seller| %>
 		<div class="col-md-3 text-center seller-each">
 			<div class="box">
-				<h4><%= seller.name %></h4>
-				<%= image_tag(seller.profile_image.tiny) if seller.profile_image.tiny.present? %>
+				<h5><%= seller.name %></h5>
+				<%= image_tag(seller.profile_image_url(:tiny)) if seller.profile_image.tiny.present? %>
 				<h5><%= seller.address %></h5>
 				<%= link_to "Visit", seller_path(seller), class: "btn btn-secondary" %>
 			</div>

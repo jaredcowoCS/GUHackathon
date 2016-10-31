@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
 
   belongs_to :district
 
+  geocoded_by :address
+  after_validation :geocode  , :if => :address_changed?
+
   # user roles structure, default - seller
   enum role: [:normal, :delivery, :admin]
   # sets default role only if its a new record(i.e. object does not exist yet)

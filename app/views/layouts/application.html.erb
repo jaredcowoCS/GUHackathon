@@ -6,17 +6,21 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body class="primary">
 
-<%= render 'header' %>
+	<%= render 'header' %>
 
-<%= render 'messages' %>
+	<%= render 'messages' %>
 
-<div class="container main">
-	<%= yield %>	
-</div>
+	<!-- Main Content Section -->
+	<div class="container main">
+		<%= yield %>	
+	</div>
 
-<%= render 'footer' %>
+	<!-- Footer Section -->
+	<%= render 'footer' %>
 
 </body>
+
 </html>

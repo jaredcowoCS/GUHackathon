@@ -28,6 +28,6 @@ class Dashboard::ProductsController < ApplicationController
 
   private	
   	def product_params
-  		params.require(:product).permit(:name, :price_cents, :quantity, :description, :product_image, :user_id)
+  		params.require(:product).permit(:name, :price_cents, :quantity, :description, :product_image, :user_id, :latitude, :longitude).merge(address: current_user.address)
   	end
 end

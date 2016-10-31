@@ -19,6 +19,7 @@ gem "mini_magick"
 gem 'money-rails'
 gem 'pundit'
 gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 gem 'cloudinary'
 gem 'geocoder'
 

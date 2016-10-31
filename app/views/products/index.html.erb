@@ -1,14 +1,17 @@
 <div class="row products-index">
-	</div>
-		<% @products.each do |product| %>
-			<div class="col-md-3 text-center">
+	<% @products.each do |product| %>
+		<div class="col-md-3 text-center">
+			<%= link_to product_path(product) do %>
 				<div class="product-wrapper">
 					<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
-					<h4><%= link_to product.name, product_path(product) %></h4>
-					<h4><%= humanized_money_with_symbol(product.price_cents) %></h4>
-					<h5><%= product.user.email %></h5>
-					<%= link_to "Buy", new_product_purchase_path(product), class: "btn btn-primary form-control" %>
+					<h5><%= product.name %></h5>
+					<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
+					<h5 class="seller"><%= product.user.email %></h5>
 				</div>
-			</div>
-		<% end %>
+			<% end %>
+		</div>
+	<% end %>
+
 </div>
+
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>

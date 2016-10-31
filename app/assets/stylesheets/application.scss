@@ -21,6 +21,9 @@ $dark: #4A4A4A;
 $red: #EE543A;
 $green: #71BA51;
 $gray: #BDBDBD;
+$dark_orange: #F29B34;
+$light_orange: #FCB941;
+
 
 /* Universal Styles */
 .devise-form{
@@ -275,6 +278,17 @@ textarea{
 .underline.text-center::after {
     left: 50%;
     margin-left: -34px;
+}
+
+/* Pagination Styles */
+ul.pagination.pagination{
+	.active span{
+		background-color: $light_orange;
+		border: 1px solid $light_orange;
+	}
+	li a{
+	color: $dark;
+	}
 }
 
 /* Footer Styles */

@@ -26,7 +26,7 @@
 
 <div class="row near-you">
 	<h3 class="underline text-center">Near Your Location</h3>
-	<% Product.order("created_at DESC").where.not(quantity: 0).limit(4).each do |product| %>
+	<% @near_products.each do |product| %>
 		<div class="col-md-3 text-center">
 		<%= link_to product_path(product),class: "product-wrapper-link" do %>
 			<div class="product-wrapper">
