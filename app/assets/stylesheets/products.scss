@@ -47,9 +47,12 @@ $gray: #BDBDBD;
 	}
 }
 
-.seller-info a{
-	color: $dark!important;
+
+.seller-info{
 	padding-left: 0;
+	 a{
+		color: $dark!important;
+	}
 }
 
 .other-products{
