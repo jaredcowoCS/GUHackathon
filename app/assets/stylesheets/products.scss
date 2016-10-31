@@ -22,6 +22,16 @@ $gray: #BDBDBD;
 	}
 }
 
+.show-product-image-wrapper{
+	position: relative;
+	.title{
+		position: absolute;
+		width: 100%;
+		background-color: #000;
+		opacity: 0.8;
+	}
+}
+
 .seller-info a{
 	color: $dark!important;
 }
