@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     location_info = request.location
-    @near_products = Product.near([location_info.latitude, location_info.longitude], 50).limit(4)
+    @near_products = Product.near(location_info).limit(4)
   end
 
   def features
