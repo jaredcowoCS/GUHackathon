@@ -1,23 +1,25 @@
 <div class="row show">
-		<div class="col-md-6 show-product-image-wrapper">
-			<%= image_tag(@product.product_image_url, class: "product-image") if @product.product_image? %>
-			<div class="title">
-				<h3><%= @product.name %></h3>
+		<div class="col-md-6">
+			<div class="show-product-image-wrapper">
+				<%= image_tag(@product.product_image_url) if @product.product_image? %>
+				<div class="title">
+					<h3 class="text-center"><%= @product.name %></h3>
+				</div>
 			</div>
 		</div>
-		<div class="col-md-5 pull-right seller-wrapper">
-			<div class="row">
-				<div class="col-md-6 seller-info">
-					<h4>Seller: <%= link_to @product.user.name, root_path %></h4>
-					<h4>Price: <%= humanized_money_with_symbol(@product.price_cents) %></h4>
-					<h4>Quantity: <%= @product.quantity %></h4>
-				</div>
-				<div class="col-md-6">
-					<%= image_tag("purchase") %>
+		<div class="col-md-5 pull-right">
+			<div class="row seller-wrapper">
+				<div class="col-md-7 seller-info">
+					<h5>Seller: <%= link_to @product.user.name, root_path %></h5>
+					<h5 class="price">Going for <%= humanized_money_with_symbol(@product.price_cents) %></h5>
+					<h5>Quantity: <%= @product.quantity %></h5>
 					<p><%= @product.description %></p>
 				</div>
+				<div class="col-md-5">
+					<%= image_tag("purchase") %>
+				</div>
+				<%=link_to "Purchase", new_product_purchase_path(@product), class: "btn btn-secondary form-control" %>
 			</div>
-			<%=link_to "Purchase", new_product_purchase_path(@product), class: "btn btn-secondary form-control" %>
 		</div>
 </div>
 

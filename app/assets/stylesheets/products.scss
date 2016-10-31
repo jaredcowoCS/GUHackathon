@@ -19,16 +19,37 @@ $gray: #BDBDBD;
 	}
 	.product-wrapper{
 		margin-bottom: 20px;
+		color: #FFF;
 	}
+}
+
+.seller-wrapper{
+	padding: 20px;
+	background-color: #FFF;
+}
+
+.seller-reviews{
+	background-color: #FFF;
+	padding: 20px;
+	margin-top: 20px;
 }
 
 .show-product-image-wrapper{
 	position: relative;
+	color: #FFF;
+	margin-bottom: 50px;
+	img{
+		width: 100%;
+		height: auto;
+	}
 	.title{
 		position: absolute;
 		width: 100%;
 		background-color: #000;
 		opacity: 0.8;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 
