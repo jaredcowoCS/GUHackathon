@@ -10,9 +10,9 @@
 					<h4>Seller: <%= link_to @product.user.name, root_path %></h4>
 					<h4>Price: <%= humanized_money_with_symbol(@product.price_cents) %></h4>
 					<h4>Quantity: <%= @product.quantity %></h4>
-					<p><%= @product.description %></p>
 				</div>
 				<div class="col-md-6">
+					<p><%= @product.description %></p>
 					<%= image_tag("purchase") %>
 				</div>
 			</div>
