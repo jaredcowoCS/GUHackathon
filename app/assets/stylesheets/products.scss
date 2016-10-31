@@ -28,12 +28,6 @@ $gray: #BDBDBD;
 	background-color: #FFF;
 }
 
-.seller-reviews{
-	background-color: #FFF;
-	padding: 20px;
-	margin-top: 20px;
-}
-
 .show-product-image-wrapper{
 	position: relative;
 	color: #FFF;
@@ -55,6 +49,7 @@ $gray: #BDBDBD;
 
 .seller-info a{
 	color: $dark!important;
+	padding-left: 0;
 }
 
 .other-products{
