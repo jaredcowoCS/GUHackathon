@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   before_action :allow_home
 
   def home
-    @near_products = Product.near(current_user.address).limit(4)
   end
 
   def features
