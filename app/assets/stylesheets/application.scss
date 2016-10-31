@@ -129,6 +129,9 @@ a{
 	border-radius: 3px;
 	color: $dark;
 	text-decoration: none!important;
+	.product-details{
+		padding: 0 10px;
+	}
 	img{
 		width: 100%;
 		height: auto
