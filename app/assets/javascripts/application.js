@@ -17,7 +17,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
 	setTimeout(function(){
 		$('.alert').fadeOut("slow", function(){
 			$(this).remove();
