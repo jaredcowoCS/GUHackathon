@@ -4,14 +4,15 @@
 			<%= link_to product_path(product) do %>
 				<div class="product-wrapper">
 					<%= image_tag(product.product_image_url(:normal)) if product.product_image? %>
-					<h5><%= product.name %></h5>
-					<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
-					<h5 class="seller"><%= product.user.email %></h5>
+					<div class="product-details">
+						<h5><%= product.name %></h5>
+						<h5 class="price"><%= humanized_money_with_symbol(product.price_cents) %></h5>
+						<h5 class="seller"><%= product.user.email %></h5>
+					</div>
 				</div>
 			<% end %>
 		</div>
 	<% end %>
-
 </div>
 
 <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
