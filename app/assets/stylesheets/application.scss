@@ -16,14 +16,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'https://fonts.googleapis.com/css?family=Roboto';
-@import url('https://fonts.googleapis.com/css?family=Lalezar');
 
 $dark: #4A4A4A;
 $red: #EE543A;
 $green: #71BA51;
 $gray: #BDBDBD;
 
-/* GLOBAL STYLES*/
+/* Universal Styles */
 .devise-form{
 	margin-top: 50px;
 }
@@ -68,6 +67,8 @@ a{
 	float: none;
 }
 
+
+/* Navigation Styles */
 .navbar{
 	border: none;
 	background-color: #fff;
@@ -118,6 +119,7 @@ a{
 	margin-bottom: 20px;
 }
 
+/* Product Styles */
 .product-wrapper{
 	background-color: #FFF;
 	border: 1px solid #E1E3DF;
@@ -134,37 +136,7 @@ a{
 	color: $green;
 }
 
-.logo{
-	width: 16%;
-	height: auto;
-}
-
-.banner{
-	position: relative;
-	h2{
-		font-size: 30px;
-		color: #FFF;
-		padding: 20px;
-		background-color: #000;
-		opacity: 0.8;
-	}
-	img{
-		width: 100%;
-		height: auto;
-	}
-	.banner-text{
-		position: absolute;
-		background-color: #000;
-		opacity: 0.7;
-		width: 100%;
-		bottom: 0;
-		color: #FFF;
-		margin: 0 auto;
-		padding-bottom: 6px;
-        text-align: center;
-	}
-}
-
+/* Button Styles */
 .btn{
 	border: none!important;
 	border-radius: 3px!important;
@@ -178,10 +150,6 @@ a{
 		background: #EB5055;
 		opacity: 0.9;
 	}
-}
-
-.success{
-	color: #71BA51;
 }
 
 .btn-secondary{
@@ -198,7 +166,11 @@ a{
 	padding-bottom: 20px;
 }
 
-/* FLASH STYLES */
+.success{
+	color: #71BA51;
+}
+
+/* Flash Styles */
 .alert{
   position: absolute;
   top: 0;

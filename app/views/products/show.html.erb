@@ -21,7 +21,7 @@
 </div>
 
 <div class="row other-products">
-		<h3 class="underline text-center">Other products</h3>
+		<h3 class="underline text-center">Other Products</h3>
 		<% Product.order("RANDOM()").where.not(id: @product.id).limit(4).each do |product| %>
 			<div class="col-md-3 text-center">
 				<%= link_to product_path(product) do %>

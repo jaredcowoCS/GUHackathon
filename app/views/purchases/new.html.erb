@@ -18,7 +18,7 @@
 					</div>
 				<div class="input-group">
 				   <span class="input-group-btn">
-						<%= f.submit "Buy Via Balance", class: "btn btn-secondary form-control" %>
+						<%= f.submit "Buy Via Balance", class: "btn btn-secondary form-control", data: {confirm: "Are you sure you want to make this purchase?"} %>
 					</span>
 				</div>
 			<% end %>
@@ -35,6 +35,12 @@
 			<div class="form-group">
 				<%= check_box_tag('deliver', value = "1", checked = false, options = {}) %>
 				<%= label_tag "Local Meet Up" %>
+			</div>
+			<hr>
+			<div class="form-group">
+				<%= check_box_tag('deliver', value = "1", checked = false, options = {}) %>
+				<%= label_tag "Delivery via BPMS" %>
+				<p>If checked, BPMS will contact you for further details.</p>
 			</div>
 			<%= link_to "Proceed", "#", class: "btn btn-secondary form-control" %>
 		</div>
