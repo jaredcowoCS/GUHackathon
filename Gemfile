@@ -22,6 +22,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'cloudinary'
 gem 'geocoder'
+gem 'friendly_id', '~> 5.1.0' 
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

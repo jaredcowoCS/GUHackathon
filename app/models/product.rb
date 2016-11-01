@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   mount_uploader :product_image, ProductImageUploader
 	
   has_many :purchases, dependent: :destroy
