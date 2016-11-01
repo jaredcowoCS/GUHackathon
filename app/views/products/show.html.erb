@@ -10,8 +10,8 @@
 		<div class="col-md-5 pull-right">
 			<div class="row seller-wrapper">
 				<div class="col-md-7 seller-info">
-					<h5>Seller: <%= link_to @product.user.name, root_path %></h5>
 					<h5 class="price">Going for <%= humanized_money_with_symbol(@product.price_cents) %></h5>
+					<h5>Seller: <%= link_to @product.user.name, root_path %></h5>
 					<h5>Quantity: <%= @product.quantity %></h5>
 					<p class="gray"><%= @product.description %></p>
 				</div>
